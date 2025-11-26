@@ -1,31 +1,68 @@
-## Project Overview
+# Fullstack 2FA (Two-Factor Authentication) Project
 
-1. **Project Overview**:  
-   This project implements a secure Two-Factor Authentication (2FA) system, enhancing account security by requiring two forms of identification for login.
+This project demonstrates a fully functional **Two-Factor Authentication (2FA)** system using a full-stack approach.  
+It enhances user security by requiring both password login and a time-based one-time passcode (TOTP).
 
-2. **Tech Stack**:  
-   Built with Node.js, Express, Speakeasy, Passport.js, React, and React Context API, leveraging both server-side and client-side authentication techniques.
+## 🔐 Features
+- Secure 2FA using TOTP (Time-Based OTP)
+- Login authentication using Passport.js
+- React-based frontend with clean UI
+- Session management using React Context API
+- QR code generation for authenticator apps
+- Real-time OTP validation
+- Full backend + frontend integration
 
-3. **Multi-Factor Authentication (MFA)**:  
-   MFA is a layered security approach that requires users to provide two different authentication factors to gain access, strengthening security beyond standard password-based systems.
+## 📁 Project Structure
+backend/  
+│── config/  
+│── controllers/  
+│── models/  
+│── routes/  
+│── index.js  
+client/  
+│── src/components  
+│── src/pages  
+│── src/context  
+│── src/service  
+│── App.jsx  
+│── main.jsx  
 
-4. **Backend Setup**:  
-   Node.js and Express handle the backend, with Speakeasy generating time-based one-time passcodes (TOTPs) for the 2FA, and Passport.js managing user authentication.
+## 🖥 Backend Overview
+### Tech Stack:
+- Node.js
+- Express
+- Speakeasy (TOTP generation)
+- Passport.js (Authentication)
+- MongoDB or any DB you configure
 
-5. **Frontend Integration**:  
-   The frontend, built with React, includes a user-friendly 2FA login interface, ensuring a smooth and secure user experience.
+### Backend Responsibilities:
+- User registration & login
+- Generating secret keys
+- Creating TOTP codes
+- Validating user-entered OTP
+- Managing sessions & authentication flows
 
-6. **Session Management**:  
-   Utilizes React Context API to manage user sessions, enhancing session tracking and state management for authenticated sessions.
+## 🎨 Frontend Overview
+### Tech Stack:
+- React
+- React Context API (session handling)
+- Vite
+- Tailwind CSS
 
-7. **API Integration**:  
-   Integrates APIs for real-time authentication, enabling seamless verification and validation of the 2FA codes generated and entered by users.
+### Frontend Responsibilities:
+- Login UI
+- 2FA code entry page
+- QR code display component
+- Managing session state
+- Calling backend APIs for authentication
 
-8. **User Account Security**:  
-   With 2FA enabled, user accounts are secured against unauthorized access, improving the overall integrity of user data and reducing security risks.
+## 🔄 How 2FA Works (Flow)
+1. User signs up → backend generates a **TOTP secret**
+2. Secret is shown as QR code → user scans with Google Authenticator
+3. User enters normal password + 6-digit OTP
+4. Backend validates OTP using Speakeasy
+5. User session is created using React Context
 
-9. **Learning Outcomes**:  
-   This project provides hands-on experience in implementing 2FA, managing sessions with React Context, and integrating API-based real-time authentication for a robust security solution.
+## 🛠 Installation
 
-10. **Future Enhancements**:  
-   Potential enhancements include integrating additional MFA factors, improving UI/UX for 2FA input, and optimizing session persistence across devices.
+### Backend:

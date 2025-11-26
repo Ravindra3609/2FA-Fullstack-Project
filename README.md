@@ -66,3 +66,30 @@ client/
 ## 🛠 Installation
 
 ### Backend:
+- cd backend
+- npm install
+- npm start
+
+### Frontend:
+- cd client
+- npm install
+- npm run dev
+
+
+## 🚀 API Features
+- POST /register  
+- POST /login  
+- POST /verify-otp  
+- GET /generate-secret  
+
+## 📚 Learning Outcomes
+- Implementing secure 2FA
+- Integrating Speakeasy TOTP
+- Using React Context for session handling
+- Building full-stack authentication flows
+
+## 🔮 Future Enhancements
+- Add email or SMS-based OTP
+- Add biometric MFA
+- Improve UI/UX of OTP input
+- Persistent refresh tokens
